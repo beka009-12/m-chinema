@@ -1,5 +1,5 @@
 "use client";
-import ReactQueryProvideers from "@/providers/ReactQueryProvideers";
+import { ReactQueryProvider } from "@/providers/ReactQueryProvideers";
 import { ReactNode, type FC } from "react";
 
 interface ILay {
@@ -7,7 +7,7 @@ interface ILay {
 }
 
 const LayoutClient: FC<ILay> = ({ children }) => {
-  return <ReactQueryProvideers>{children}</ReactQueryProvideers>;
+  return <ReactQueryProvider>{children}</ReactQueryProvider>;
 };
 
 export default LayoutClient;

@@ -1,0 +1,182 @@
+.Welcome {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-block: 100px;
+    background: linear-gradient(to bottom, transparent, #000000);
+    z-index: 1;
+  }
+
+  .overlay {
+    position: relative;
+    z-index: 1;
+  }
+  .star {
+    padding-block: 24px;
+  }
+
+  .banner {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(3);
+    }
+  }
+
+  .overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(5, 5, 5, 0.9)
+    );
+  }
+
+  .contentWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    padding: 3rem 1rem;
+    color: #fff;
+    width: 100%;
+  }
+
+  .textContent {
+    min-width: 280px;
+    max-width: 650px;
+
+    .text {
+      .title {
+        font-size: 50px;
+        font-weight: 800;
+        background: linear-gradient(90deg, #feb444, #ff0505);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: #d0d0d0;
+      margin-top: 20px;
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+      gap: 12px;
+
+      .genres {
+        padding: 6px 14px;
+        font-size: 0.95rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 30px;
+        text-decoration: none;
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.25);
+        }
+      }
+    }
+
+    .ctaButton {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      font-size: 1rem;
+      background: #e50914;
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 0 10px rgba(255, 95, 109, 0.4);
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #ff243e;
+      }
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+
+  .fadeIn {
+    animation: fadeIn 0.6s ease-in forwards;
+  }
+
+  .fadeOut {
+    animation: fadeOut 0.6s ease-out forwards;
+  }
+
+  @media (max-width: 768px) {
+    .contentWrapper {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .textContent {
+      .text .title {
+        font-size: 2.2rem;
+      }
+
+      .tagline {
+        font-size: 1rem;
+      }
+    }
+  }
+}

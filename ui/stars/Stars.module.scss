@@ -1,0 +1,20 @@
+.stars {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  justify-content: center;
+  padding: 2px 4px;
+  background: #3cff0073;
+  color: rgb(255, 255, 255);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.633);
+}
+
+.star {
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

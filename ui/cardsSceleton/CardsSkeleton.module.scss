@@ -1,0 +1,59 @@
+@keyframes pulse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.cardContainer {
+  width: 280px;
+  height: 420px;
+  cursor: default;
+  pointer-events: none;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  transform-style: preserve-3d;
+  transition: 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background: transparent;
+}
+
+.cardFront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+}
+
+.skeleton .posterSkeleton,
+.skeleton .ratingSkeleton,
+.skeleton .titleSkeleton,
+.skeleton .descriptionSkeleton {
+  animation: pulse 1.5s infinite ease-in-out;
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+  border-radius: 6px;
+}
+
+.posterSkeleton {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  margin-bottom: 0;
+}
+
+.descriptionSkeleton {
+  width: 100%;
+  height: 80px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}

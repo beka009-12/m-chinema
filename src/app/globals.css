@@ -1,9 +1,31 @@
+:root {
+  --color-bg: #000;
+  --color-text: #f5f5dc;
+  --color-accent: #e50914;
+  --color-yellow: #ffd700;
+  --color-border-glow: #8b0000;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   border: none;
+  font-family: system-ui;
+  color: var(--color-text);
+  scroll-behavior: smooth;
+
+  &::selection {
+    background-color: rgba(255, 0, 0, 0.5);
+    color: #fff;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 
 .container {
@@ -13,6 +35,13 @@
   padding-inline: 40px;
 }
 
-body {
-  background-color: #fff;
+h1,
+h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #feb444, #ff0505);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

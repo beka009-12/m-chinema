@@ -1,0 +1,67 @@
+:global(.ReactModal__Overlay) {
+  background: rgb(0, 0, 0);
+  z-index: 9999 !important;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  position: relative;
+  display: flex;
+
+  .close_btn {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+
+    transition: 0.4s;
+    cursor: pointer;
+  }
+  .content {
+    padding: 45px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    background: transparent;
+    .title {
+      font-size: 35px;
+    }
+    .searchInp {
+      padding: 20px;
+      border-bottom: 2px solid rgba(255, 0, 0, 0.896);
+      background: none;
+      font-size: 22px;
+      outline: none;
+      &::placeholder {
+        font-size: 22px;
+        color: #ffffffaa;
+      }
+    }
+    .listCard {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 120px;
+      justify-content: space-between;
+      max-height: calc(100vh - 200px);
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+      }
+    }
+  }
+}

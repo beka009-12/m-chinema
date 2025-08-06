@@ -1,11 +1,19 @@
-import { type FC, ReactNode } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { FC, ReactNode } from "react";
 
-interface IReactProviders {
+interface IReactQueryProviderProps {
   children: ReactNode;
 }
 
-export const ReactQueryProvideers: FC<IReactProviders> = ({ children }) => {
-  return <>{children}</>;
+export const ReactQueryProvider: FC<IReactQueryProviderProps> = ({
+  children,
+}) => {
+  const queryClient = new QueryClient();
+  return (
+    <QueryClientProvider client={queryClient}>
+      {children}
+      <ReactQueryDevtools initialIsOpen={true} />
+    </QueryClientProvider>
+  );
 };
-
-export default ReactQueryProvideers;

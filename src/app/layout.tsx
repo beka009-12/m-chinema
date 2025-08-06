@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import LayoutClient from "./layout.c.";
+import GlowCursor from "@/animated/GlowCursor";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body cz-shortcut-listen="true">
-        <>{children}</>
+        <LayoutClient>
+          <GlowCursor />
+          {children}
+        </LayoutClient>
       </body>
     </html>
   );
